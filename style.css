@@ -189,59 +189,23 @@ body {
 
 /*NEW */
 
-.container{
-    /* box model properties */
-    margin: 3rem auto;
-    padding: 2rem;
-
-    /* display properties */
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    place-items: center;
-    gap: 20px 30px;
-
-    /* ui properties */
-    background-color: darkslateblue;
-    border-radius: 10px
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
-.elements{
-    /* box model properties */
-    padding: 1rem 2rem;
-
-    /* Display Properties */
-    text-align: center;
-    /* ui properties*/
-    background-color: rgb(169, 158, 238);
-    border-radius: 6px;
-    color: rgb(169, 158, 238);
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-
-    /* Mobile View */
-    @media screen and (min-width: 250px) and (max-width: 480px) {
-    .container{
-    grid-template-columns: repeat (1,1fr);
-    }
-    }
-
-    /* Mobile View */
-    @media screen and (min-width: 250px) and (max-width: 480px) {
-    .container{
-    grid-template-columns: repeat (1,1fr);
-    }
-    }
-
-    /* Tablet View */
-@media screen and (min-width: 481px) and (max-width:768px) {
-.container{
-grid-template-columns: repeat (3,1fr);
-}
-}
-
-/* Laptop View */
-@media screen and (min-width:769px) and (max-width: 1024px) {
-.container{
-grid-template-columns: repeat (4,1fr);
-}
+/* Laptop */
+@media screen and (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
