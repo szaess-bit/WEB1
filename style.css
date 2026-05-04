@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 
 /* pengaturan tampilan untuk bodynya */
 
@@ -12,7 +15,8 @@ body {
 
 #layout {
     background  : #fff;
-    width       : 1000px;
+    max-width   : 1000px;
+    width       : 100%;
     margin      : auto;
     text-align  : left;
     padding     : 2px;
@@ -91,8 +95,8 @@ body {
 }
 
 .iklan{
-    width   : 200px;
-    height  : 250px;
+    max-width: 100%;
+    height: auto;
 }
 
 .judulwidget{
@@ -188,58 +192,67 @@ body {
 }
 
 /* ===================== */
-/* RESPONSIVE KHUSUS HP */
+/*      RESPONSIVE       */
 /* ===================== */
 @media (max-width: 600px) {
 
-  /* layout utama */
-  #layout {
-    width: 100%;
-    padding: 10px;
+  * {
+    box-sizing: border-box;
   }
 
-  /* isi & sidebar jadi 1 kolom */
+  body {
+    margin: 0;
+  }
+
+  /* layout utama */
+  #layout {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px !important;
+  }
+
+  /* paksa semua jadi satu kolom */
   #isi, #sidebar {
-    width: 100%;
-    float: none;
+    width: 100% !important;
+    float: none !important;
+    display: block !important;
+  }
+
+  /* hapus efek float dari gambar */
+  .gambardepan {
+    width: 100% !important;
+    height: auto !important;
+    float: none !important;
+    margin: 0 0 10px 0 !important;
+  }
+
+  /* gambar global */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
   }
 
   /* menu jadi ke bawah */
   #menu ul {
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: center;
   }
 
   #menu ul li a {
-    padding: 10px;
-  }
-
-  /* header biar tidak kepanjangan */
-  #header, .header {
-    height: auto;
-  }
-
-  /* gambar aman */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* gambar posting */
-  .gambardepan {
+    padding: 12px !important;
     width: 100%;
-    height: auto;
-    float: none;
-    margin: 0 0 10px 0;
+    text-align: center;
   }
 
-  /* teks biar enak */
-  .isipost h2 {
-    font-size: 18px;
+  /* header tidak terlalu tinggi */
+  #header, .header {
+    height: auto !important;
   }
 
-  .isipost h3 {
-    font-size: 14px;
+  /* text biar rapi */
+  h1, h2, h3, p {
+    word-wrap: break-word;
   }
 
 }
